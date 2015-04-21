@@ -29,4 +29,4 @@ csvfile = '/home/paige/list_of_crimes.csv'
 
 with open(csvfile, "w") as output:
 	writer = csv.writer(output, lineterminator='\n')
-	writer.writerows(holder2)
+	writer.writerows(holder2[1:])
