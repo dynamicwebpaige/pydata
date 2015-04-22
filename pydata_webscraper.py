@@ -31,7 +31,7 @@ for row in soup('table', {'class':'MsoNormalTable'}):
 
 # pprint.pprint(list(chunks(holder,10)))
 holder2 = list(chunks(holder,10))
-csvfile = '/home/paige/pydata/list_of_crimes.csv'
+csvfile = '/home/paige/pydata2015/list_of_crimes.csv'
 
 with open(csvfile, "w") as output:
 	writer = csv.writer(output, lineterminator='\n')
