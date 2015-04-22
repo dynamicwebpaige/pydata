@@ -3,6 +3,7 @@
 import urllib2
 import pprint
 import csv
+import URL_generator as populator
 from bs4 import BeautifulSoup
 
 police_districts = ['populate w/ police districts #s, there should be 90']
@@ -12,6 +13,9 @@ months = ['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec
 
 # URL's 
 url = 'http://www.houstontx.gov/police/cs/stats2015/jan15/jan1510h40.htm'
+# looping through list of URL's 
+# urls = populator.URL_populator()
+
 html = urllib2.urlopen(url).read()
 soup = BeautifulSoup(html)
 
