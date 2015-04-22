@@ -11,15 +11,20 @@ URLS = []
 months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 now = datetime.datetime.now()
 
+# Check's for the current year
+# HPD only has police beat data for 2009+ 
 for i in range(2010, now.year, 1):
 	full_years.append(str(i))
 
+# Checks for user's current month
 for i in range(12):
 	if now.strftime("%b") != months[i]:
 		months_to_check.append(months[i])
 	else:
 		break
 
+# Removes previous month from list of months to check in the current year
+# Usually there's a 2-month delay in HPD's police beat data
 months_to_check.pop()
 
 def URL_populator():
