@@ -9,6 +9,7 @@ full_years = []
 months_to_check = []
 URLS = []
 months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+months_lower = [x.lower() for x in months]
 now = datetime.datetime.now()
 
 # Check's for the current year
@@ -30,16 +31,16 @@ months_to_check.pop()
 def URL_populator():
 	for i in  months[5:]:
 		for j in HPD_police_beats:
-			URLS.append("http://www.houstontx.gov/police/cs/stats2009/" + i + "09/" + i + j + ".htm")
+			URLS.append("http://www.houstontx.gov/police/cs/stats2009/" + i.lower() + "09/" + i.lower() + "09" + j.lower() + ".htm")
 
 	for i in months:
 		for j in full_years:
 			for k in HPD_police_beats:
-				URLS.append("http://www.houstontx.gov/police/cs/stats" + j + "/" + i + j[-2:] + "/" + i + k + ".htm")
+				URLS.append("http://www.houstontx.gov/police/cs/stats" + j + "/" + i.lower() + j[-2:] + "/" + i.lower() + k.lower() + ".htm")
 
 	for i in months_to_check:
 		for j in HPD_police_beats:
-			URLS.append("http://www.houstontx.gov/police/cs/stats2015/" + i + "15/" + i + j + ".htm")
+			URLS.append("http://www.houstontx.gov/police/cs/stats2015/" + i.lower() + "15/" + i.lower() + j.lower() + ".htm")
 
 	return URLS
 
